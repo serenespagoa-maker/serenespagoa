@@ -1,0 +1,29 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - agents/project-access-details-request
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          submodules: false
+          persist-credentials: true
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@373f7f263a76c20808c831209c920827a82a2847
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
+          force_orphan: true
+          keep_files: false
+          commit_message: Deploy site from agents/project-access-details-request
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"

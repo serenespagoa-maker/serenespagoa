@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Serenespa Elitecompanion — Elite Companion Profiles in Goa, Bengaluru, Mumbai, Chennai, Kolkata, Hyderabad & Pune</title>
+<meta name="description" content="Discover verified elite companion profiles across Goa, Bengaluru, Mumbai, Chennai, Kolkata, Hyderabad and Pune. Explore by city and area, with discreet contact via WhatsApp, call or email.">
+<meta name="keywords" content="Goa escorts, Panaji companions, elite companion Goa, Calangute companion, Baga companion, elite companions Bengaluru, companion Indiranagar, elite companion Mumbai Bandra, companion Chennai, companion Kolkata, Hyderabad escorts, Pune escorts, verified companions India">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="ageGate" class="gate">
+  <div class="gate-card">
+<div class="logo">Serenespa Elitecompanion</div>
+    <h1>Adults only</h1>
+    <p>This website is intended for adults aged 18 and over. By entering, you confirm that you are at least 18 and agree to our terms.</p>
+    <button id="enterBtn" class="btn primary">I am 18+ — Enter</button>
+    <a href="#" class="leave">Leave site</a>
+  </div>
+</div>
+
+<header class="header">
+<a class="logo" href="#">ELITE COMPANIONS</a>
+  <nav><a href="#discover">Discover</a><a href="#spotlight">Spotlight</a><a href="#explore">Explore by City</a><a href="#cities">Cities</a><a href="#how">How it Works</a><a href="#why">Why Us</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <button class="btn outline" onclick="openModal()">List a profile</button>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">PRIVATE • VERIFIED • DISCREET</span>
+    <h1>Meet people.<br><em>Share experiences.</em></h1>
+    <p>A modern directory for discovering verified elite companions across Goa, Bengaluru, Mumbai, Chennai, Kolkata, Hyderabad and Pune.</p>
+    <div class="search">
+      <input id="searchInput" placeholder="Search by city, area or profile name">
+      <button class="btn primary" onclick="searchProfiles()">Search</button>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="orb"></div>
+    <span>VERIFIED COMMUNITY</span>
+    <strong>Elegance, meet desire.</strong>
+    <p>Hand-picked profiles, verified identities and total discretion — crafted for those who expect more.</p>
+  </div>
+</section>
+
+<section id="discover" class="section">
+  <div class="section-head"><div><span class="eyebrow">DISCOVER</span><h2>Featured profiles</h2></div>
+    <div class="filters">
+      <select id="cityFilter" onchange="setCity(this.value)">
+        <option value="">All cities</option>
+        <option>Goa</option><option>Bengaluru</option><option>Mumbai</option>
+        <option>Chennai</option><option>Kolkata</option>
+        <option>Hyderabad</option><option>Pune</option>
+      </select>
+      <select id="areaFilter" onchange="renderProfiles()"><option value="">All areas</option></select>
+    </div>
+  </div>
+  <div id="profiles" class="grid"></div>
+</section>
+
+<section id="explore" class="section soft">
+  <div class="section-head"><div><span class="eyebrow">EXPLORE BY AREA</span><h2>Find a companion near you</h2></div></div>
+  <div class="city-tabs">
+    <button class="active" onclick="exploreCity('Goa',this)">Goa</button>
+    <button onclick="exploreCity('Bengaluru',this)">Bengaluru</button>
+    <button onclick="exploreCity('Mumbai',this)">Mumbai</button>
+    <button onclick="exploreCity('Chennai',this)">Chennai</button>
+    <button onclick="exploreCity('Kolkata',this)">Kolkata</button>
+    <button onclick="exploreCity('Hyderabad',this)">Hyderabad</button>
+    <button onclick="exploreCity('Pune',this)">Pune</button>
+  </div>
+  <div class="area-wrap"><div id="areaBoard" class="area-grid"></div></div>
+</section>
+
+<section id="cities" class="section">
+  <div class="section-head"><div><span class="eyebrow">POPULAR CITIES</span><h2>Browse by city</h2></div></div>
+  <div class="cities">
+    <button onclick="setCity('Goa')">Goa <span>→</span></button>
+    <button onclick="setCity('Bengaluru')">Bengaluru <span>→</span></button>
+    <button onclick="setCity('Mumbai')">Mumbai <span>→</span></button>
+    <button onclick="setCity('Chennai')">Chennai <span>→</span></button>
+    <button onclick="setCity('Kolkata')">Kolkata <span>→</span></button>
+    <button onclick="setCity('Hyderabad')">Hyderabad <span>→</span></button>
+    <button onclick="setCity('Pune')">Pune <span>→</span></button>
+  </div>
+</section>
+
+<section id="spotlight" class="section spotlight">
+  <div class="section-head"><div><span class="eyebrow">VIEWER'S CHOICE</span><h2>VIP Spotlight</h2></div><p style="color:#d8cdd5;margin:0;max-width:320px">Hand-picked profiles you'll love. Swipe through this week's favourites.</p></div>
+  <div class="carousel">
+    <div class="carousel-track" id="spotTrack">
+      <div class="carousel-card" style="background-image:url('img/profiles/selena.png')">
+        <div><span class="cc-flag">★ Featured Companion</span><h3>Selena</h3><div class="cc-meta">Park Street · Kolkata · 25 yrs</div></div>
+      </div>
+      <div class="carousel-card" style="background-image:url('img/profiles/sara.png')">
+        <div><span class="cc-flag">★ Elegant Choice</span><h3>Sara</h3><div class="cc-meta">T. Nagar · Chennai · 28 yrs</div></div>
+      </div>
+      <div class="carousel-card" style="background-image:url('img/profiles/ria.png')">
+        <div><span class="cc-flag">★ New & Trending</span><h3>Ria</h3><div class="cc-meta">Banjara Hills · Hyderabad · 24 yrs</div></div>
+      </div>
+      <div class="carousel-card" style="background-image:url('img/profiles/sushmita.png')">
+        <div><span class="cc-flag">★ Most Wanted</span><h3>Sushmita</h3><div class="cc-meta">Marathahalli · Bengaluru · 25 yrs</div></div>
+      </div>
+      <div class="carousel-card" style="background-image:url('img/profiles/giya.png')">
+        <div><span class="cc-flag">★ Goa Local</span><h3>Giya</h3><div class="cc-meta">Calangute · Goa · 25 yrs</div></div>
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <button id="spotPrev" type="button" aria-label="Previous">←</button>
+      <button id="spotNext" type="button" aria-label="Next">→</button>
+    </div>
+  </div>
+  <div class="trust-strip">
+    <div><b>100%</b><span>Verified</span></div>
+    <div><b>12</b><span>Profiles</span></div>
+    <div><b>7</b><span>Cities</span></div>
+    <div><b>24/7</b><span>Support</span></div>
+  </div>
+</section>
+
+<section id="how" class="section soft">
+  <div class="section-head"><div><span class="eyebrow">SIMPLE & DISCREET</span><h2>How it works</h2></div></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>Browse profiles</h3><p>Explore verified profiles by city and area. Read interests and see photos of companions who catch your eye.</p></div>
+    <div class="step"><div class="num">2</div><h3>Connect privately</h3><p>Reach out discreetly via WhatsApp, call or email. Discuss availability and expectations on your own terms.</p><div class="connect-btns" style="margin-top:12px;display:flex;gap:8px"><a class="btn green" href="https://wa.me/919845700129" target="_blank" rel="noopener">💬 WhatsApp</a><a class="btn green alt" href="tel:+919845700129">📞 Call</a><a class="btn green mail" href="mailto:elitecompanionsgbl@gmail.com">✉️ Email</a></div></div>
+    <div class="step"><div class="num">3</div><h3>Enjoy the company</h3><p>If you're both comfortable, agree on the details and enjoy an unforgettable experience with mutual respect.</p></div>
+  </div>
+</section>
+
+<section id="why" class="section why">
+  <div class="section-head"><div><span class="eyebrow">WHY ELITE COMPANIONS</span><h2>Designed for those who expect more.</h2></div></div>
+  <div class="benefits">
+    <div class="benefit"><div class="icon">✓</div><div><h3>Verified profiles</h3><p>Every companion is reviewed before publishing, so you can browse with confidence.</p></div></div>
+    <div class="benefit"><div class="icon">🔒</div><div><h3>Privacy first</h3><p>Our simple inquiry process keeps personal information minimal and contacts straightforward.</p></div></div>
+    <div class="benefit"><div class="icon">✨</div><div><h3>Carefully curated</h3><p>A diverse, quality selection — from luxury companions to relaxed dinner dates.</p></div></div>
+    <div class="benefit"><div class="icon">🤝</div><div><h3>Mutual respect</h3><p>Built on choice, honesty and consent between adults, with clear boundaries always.</p></div></div>
+  </div>
+</section>
+
+<section id="cities-cta" class="section soft">
+  <div class="section-head"><div><span class="eyebrow">CITY COMPANIONS</span><h2>Find a discreet, verified companion</h2></div></div>
+  <div style="max-width:820px;margin:0 auto;text-align:center">
+    <p style="margin:0 0 12px;color:#cfc9d3">Browse curated profiles across major cities including Goa and Bengaluru. Use the search or contact us directly and our team will help you find the right match.</p>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:12px">
+      <a class="btn primary" href="#discover">Browse profiles</a>
+      <a class="btn light" href="mailto:elitecompanionsgbl@gmail.com">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="section testimonials">
+  <div class="section-head"><div><span class="eyebrow">WORDS FROM CLIENTS</span><h2>What people say</h2></div></div>
+  <div class="testi-grid">
+    <div class="testi"><div class="stars">★★★★★</div><p>Booked a companion in Calangute for a beach dinner. The whole process was discreet and the companion was wonderful company.</p><div class="who">— Vikram, Goa</div><div class="role">Dinner companion</div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>Loved browsing by area. The profiles feel genuinely curated and the contact process is effortless.</p><div class="who">— Rohan, Mumbai</div><div class="role">Event companion</div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>The Goa team verified everything upfront and made me feel completely at ease. Highly recommend for visitors to Goa.</p><div class="who">— Daniel, London</div><div class="role">Travel companion</div></div>
+  </div>
+</section>
+
+<section id="safety" class="section safety">
+  <span class="eyebrow">SAFETY FIRST</span>
+  <h2>Built around trust and discretion.</h2>
+  <div class="safety-grid">
+    <div><b>✓</b><h3>Profile verification</h3><p>Use verification workflows before publishing profiles.</p></div>
+    <div><b>✓</b><h3>Report & block</h3><p>Give visitors clear tools to report suspicious or abusive behaviour.</p></div>
+    <div><b>✓</b><h3>Privacy controls</h3><p>Minimise personal information and protect account data.</p></div>
+  </div>
+</section>
+
+<section id="about" class="section about-seo">
+  <span class="eyebrow">ABOUT</span>
+  <h2>Welcome to Serenespa Elitecompanion</h2>
+
+  <p>I started Serenespa Elitecompanion because I wanted a place where discretion, warmth and clear information come first. Too often people searching for companionship or wellness services are met with confusing adverts, vague promises and guesswork. This site is different: it’s a small, carefully curated directory that helps you find genuinely suitable company and professional sessions in the cities you visit or call home.</p>
+
+  <p>Each profile you see here is written by a person who understands the value of a good introduction. Instead of long lists and overcrowded search results, the focus is on personality, practical details and respect — so you can decide quickly whether a companion or a wellness professional fits your plans.</p>
+
+  <h3>What we focus on</h3>
+  <p>Serenespa Elitecompanion is built on three simple promises: clarity, consent and discretion. We want you to be able to browse with confidence: to read a profile, learn about a companion’s approach, and start a conversation that is private and straightforward.</p>
+
+  <h4>Clarity</h4>
+  <p>Every listing highlights the essentials — location, availability, a short description and the types of services offered. If someone mentions spa services or massage, you’ll see whether the session is offered in a professional studio, a licensed spa, or a private appointment. That includes clear notes about duration, what to expect and whether any qualifications or training are relevant.</p>
+
+  <h4>Consent</h4>
+  <p>Respect is the foundation of every interaction. We encourage open, early conversations about boundaries and expectations so both parties can make informed choices. Consent and comfort are not negotiable here.</p>
+
+  <h4>Discretion</h4>
+  <p>Privacy matters. Our site avoids exposing unnecessary personal details and uses discreet contact methods so your inquiries start and stay private.</p>
+
+  <h3>Finding the right service</h3>
+  <p>Use the city and area filters to narrow results quickly. If you’re looking for wellness options, keywords like <em>body massage</em>, <em>body to body massage</em>, <em>female to male massage</em> or <em>female to male spa near me</em> will help surface profiles that mention therapeutic or spa-style sessions. For users searching specifically in Bangalore / Bengaluru, terms such as <em>body to body massage parlour in Bengaluru or bangalore</em> can be used — but please treat those listings with extra care and confirm the professional’s licensing and location before booking.</p>
+
+  <h3>About wellness and massage listings</h3>
+  <p>Many companions on Serenespa Elitecompanion also offer professional wellness services. These may include therapeutic body massage techniques performed in a spa, studio or private setting. When a profile lists massage offerings, it includes practical details so you can make a safe choice: whether the session is table-based in a licensed space, a private studio treatment, or an in-room appointment; the expected session length; and any training or certifications the provider wishes to share.</p>
+
+  <p>If you’re searching for a body to body massage, a standard body massage, or a female to male massage, please always ask about hygiene practices, qualifications and where the service will take place. These are reasonable questions and professional providers will welcome them.</p>
+
+  <h3>How to use this site — in four steps</h3>
+  <ol>
+    <li><strong>Search</strong> — Enter a city or keyword. Use area filters to focus results.</li>
+    <li><strong>Read</strong> — Open profiles and read descriptions carefully; look for notes about massage, spa settings, and professional background.</li>
+    <li><strong>Message</strong> — Use the discreet contact buttons (WhatsApp, phone or email) to ask about availability and confirm details.</li>
+    <li><strong>Meet safely</strong> — Agree logistics and payment in advance. Choose licensed spaces when you prefer a formal setting.</li>
+  </ol>
+
+  <h3>Safety and compliance</h3>
+  <p>Rules about massage, spa services and personal companionship vary by city. Serenespa Elitecompanion encourages transparency: providers should state any relevant licences, certifications, or studio affiliations. If you are searching for a <em>body to body massage parlour in Bengaluru or bangalore</em> or similar services, check that the provider operates within local regulations and maintains professional standards.</p>
+
+  <h3>What makes a great profile</h3>
+  <p>A thoughtful profile explains personality, typical availability, the kinds of experiences a companion prefers, and any professional services they offer. Look for clear language about boundaries, expected duration, and the environment where services take place. Those details make planning easy and reduce misunderstandings.</p>
+
+  <h3>Etiquette and respect</h3>
+  <p>Approach every interaction with courtesy. Remember that companions and wellness professionals are people offering a service. Communicate clearly, agree on boundaries, and treat the meeting with respect. If anything feels off, step back — your comfort is the priority.</p>
+
+  <h3>Local searches — Bengaluru and beyond</h3>
+  <p>For users in Bengaluru, try filters for Indiranagar, Koramangala, MG Road and other neighbourhoods. Use the search box for phrases like <em>female to male spa near me</em> or <em>body massage</em> to find nearby professionals who mention spa or massage work in their profile. When in doubt, ask for the treatment location and proof of training.</p>
+
+  <h3>Final note</h3>
+  <p>Serenespa Elitecompanion is a small, human-centred directory built to make discovery simple and respectful. If you’d like the tone adjusted, the content shortened, or a version tailored specifically to regional SEO for Bengaluru or Goa, tell me which city and I’ll refine it right away.</p>
+</section>
+</section>
+
+<section id="contact" class="cta">
+  <div><span class="eyebrow">GET STARTED</span><h2>Want to create a profile?</h2><p>Submit your details for review. Profiles are published only after moderation.</p></div>
+  <div class="cta-btns">
+    <a class="btn light" href="mailto:elitecompanionsgbl@gmail.com">✉️ Email us</a>
+    <button class="btn light" onclick="openModal()">Request listing</button>
+  </div>
+</section>
+</main>
+
+<footer>
+<div class="logo">Serenespa Elitecompanion</div>
+  <p>© 2026 Serenespa Elitecompanion. Adults 18+ only.<br><a href="mailto:elitecompanionsgbl@gmail.com">elitecompanionsgbl@gmail.com</a></p>
+  <div><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Community Standards</a></div>
+</footer>
+
+<div id="modal" class="modal">
+ <div class="modal-card">
+   <button class="close" onclick="closeModal()">×</button>
+   <span class="eyebrow">PROFILE REQUEST</span><h2>Submit a profile</h2>
+   <form id="profileForm" onsubmit="submitForm(event)">
+    <input id="fName" name="name" required placeholder="Display name">
+    <input id="fEmail" name="email" required type="email" placeholder="Email address">
+<select id="fCity" name="city" required><option value="">Choose city</option><option>Goa</option><option>Bengaluru</option><option>Mumbai</option><option>Chennai</option><option>Kolkata</option><option>Hyderabad</option><option>Pune</option></select>
+    <textarea id="fDesc" name="description" required placeholder="Short profile description"></textarea>
+    <label class="check"><input type="checkbox" required> I confirm I am 18+ and agree to the community standards.</label>
+    <button class="btn primary">Send for review</button>
+   </form>
+ </div>
+</div>
+
+<div id="galleryModal" class="gallery">
+ <div class="gallery-card">
+   <button class="close" onclick="closeGallery()">×</button>
+   <span class="eyebrow">PHOTO GALLERY</span>
+   <h2 id="galleryTitle"></h2>
+   <div id="galleryGrid" class="ggrid"></div>
+ </div>
+</div>
+<script src="script.js"></script>
+</body></html>

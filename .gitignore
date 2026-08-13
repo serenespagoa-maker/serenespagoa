@@ -1,0 +1,16 @@
+# Source PDFs (already converted to images for the site)
+*.pdf
+img/*.pdf
+
+# Redundant raw PNGs dumped in the img root (the site uses img/profiles and img/galleries)
+img/*.png
+
+# Helper conversion script
+convert_pdfs.ps1
+
+# temp files
+_staged.txt
+
+# OS / editor
+.DS_Store
+Thumbs.db
