@@ -157,7 +157,7 @@ const wa=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I 
  if(!box)return;
  let html='';
  for(let i=1;i<=p.pages;i++){
-   html+=`<figure class="gitem"><img src="${p.gallery}/${i}.png" alt="${p.name} photo ${i}" loading="lazy"><figcaption>Photo ${i}</figcaption></figure>`;
+   html+=`<figure class="gitem"><img src="${p.gallery}/${i}.png" alt="${p.name} photo ${i}" loading="lazy" onerror="this.onerror=null;this.src='img/profiles/placeholder.svg'"><figcaption>Photo ${i}</figcaption></figure>`;
  }
  box.innerHTML=html;
 }
