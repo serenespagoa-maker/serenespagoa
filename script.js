@@ -21,11 +21,18 @@ const profiles=[
 {name:'Kirann',title:'Bubbly Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:23,initial:'K',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/kirann',pages:24,about:'Bubbly and down to earth. Enjoy movies, long drives and good food with even better company. Available in Panaji and around Goa.',likes:['Movies','Road trips','Food','Fitness']},
 {name:'Sara',title:'Elegant Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:28,initial:'S',verified:true,img:'img/profiles/sara.png',gallery:'img/galleries/sara',pages:34,about:'Elegant, charismatic and well-spoken. Interested in culture, theatre and quiet evenings with class. Now welcoming guests in Panaji, Goa.',likes:['Theatre','Culture','Wine','Reading']},
 {name:'Selena',title:'Charming Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:25,initial:'S',verified:true,img:'img/profiles/selena.png',gallery:'img/galleries/selena',pages:32,about:'Charming and graceful with an eye for style. Love beach clubs, shopping and lively conversations. Available in Panaji, Goa.',likes:['Beach clubs','Shopping','Style','Parties']},
-{name:'Sushmita',title:'Stunning Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:25,initial:'S',verified:true,img:'img/profiles/sushmita.png',gallery:'img/galleries/sushmita',pages:3,about:'Stunning and confident with a magnetic presence. I enjoy luxury dinners, travel and unforgettable evenings in good company. Based in Panaji, Goa.',likes:['Luxury','Travel','Dining','Conversation']},
 {name:'Ria',title:'Playful Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:24,initial:'R',verified:true,img:'img/profiles/ria.png',gallery:'img/galleries/ria',pages:4,about:'Playful and energetic. I love exploring the city, trying new cafés and keeping conversations lively. Available in Panaji, Goa.',likes:['Cafés','Music','Shopping','Travel']},
 {name:'Nisha',title:'Graceful Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:26,initial:'N',verified:true,img:'img/profiles/nisha.png',gallery:'img/galleries/nisha',pages:4,about:'Graceful and well-spoken with a calm, elegant presence. I enjoy art, fine dining and quiet evenings. Now in Panaji, Goa.',likes:['Art','Fine dining','Reading','Wine']},
 {name:'Priya',title:'Enchanting Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:25,initial:'P',verified:true,img:'img/profiles/priya.png',gallery:'img/galleries/priya',pages:4,about:'Enchanting and charismatic. I love rooftop dinners, dance and living in the moment. Available in Panaji, Goa.',likes:['Dancing','Rooftops','Dining','Adventure']},
 {name:'Zara',title:'Radiant Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:27,initial:'Z',verified:true,img:'img/profiles/zara.png',gallery:'img/galleries/zara',pages:4,about:'Radiant and sophisticated. I enjoy luxury shopping, travel and elegant conversation. Based in Panaji, Goa.',likes:['Luxury','Travel','Fashion','Conversation']},
+
+// Bengaluru profiles
+{name:'Aarya',title:'Stylish Companion in Indiranagar, Bengaluru',city:'Bengaluru',area:'Indiranagar',age:27,initial:'A',verified:true,img:'img/profiles/aarya.png',gallery:'img/galleries/aarya',pages:24,about:'Sociable, fashion-forward and city-savvy. Loves rooftop bars, cafés and contemporary art.',likes:['Dining','Rooftops','Art','Travel']},
+{name:'Nandini',title:'Charming Companion in Koramangala, Bengaluru',city:'Bengaluru',area:'Koramangala',age:25,initial:'N',verified:true,img:'img/profiles/nandini.png',gallery:'img/galleries/nandini',pages:18,about:'Warm, easy-going and great company for casual evenings and weekend events.',likes:['Movies','Food','Live music']},
+{name:'Rhea',title:'Elegant Companion in Whitefield, Bengaluru',city:'Bengaluru',area:'Whitefield',age:29,initial:'R',verified:true,img:'img/profiles/rhea.png',gallery:'img/galleries/rhea',pages:30,about:'Refined, well-travelled and poised. Comfortable in upscale settings and hotel stays.',likes:['Travel','Fine dining','Theatre']},
+{name:'Meera',title:'Playful Companion in HSR Layout, Bengaluru',city:'Bengaluru',area:'HSR Layout',age:24,initial:'M',verified:true,img:'img/profiles/meera.png',gallery:'img/galleries/meera',pages:16,about:'Fun-loving and energetic, great for relaxed outings and spontaneous plans.',likes:['Cafés','Shopping','Music']},
+{name:'Tanya',title:'Sophisticated Companion in Jayanagar, Bengaluru',city:'Bengaluru',area:'Jayanagar',age:28,initial:'T',verified:true,img:'img/profiles/tanya.png',gallery:'img/galleries/tanya',pages:22,about:'Polished and discreet with a love for cultural events and quiet dinners.',likes:['Culture','Reading','Dining']},
+{name:'Priyanka',title:'Radiant Companion in MG Road, Bengaluru',city:'Bengaluru',area:'MG Road',age:26,initial:'P',verified:true,img:'img/profiles/priyanka.png',gallery:'img/galleries/priyanka',pages:20,about:'Confident, engaging and comfortable in social settings and nightlife.',likes:['Nightlife','Cocktails','Conversation']},
 ];
 
 function renderProfiles(list=profiles){
@@ -85,10 +92,29 @@ function submitForm(e){
  const city=(document.getElementById('fCity')||{}).value||'';
  const desc=(document.getElementById('fDesc')||{}).value||'';
  const subject='New profile listing request';
- const body='New profile listing request via Elite Companions:\n\nName: '+name+'\nContact email: '+from+'\nCity: '+city+'\nDescription: '+desc;
+ const body='New profile listing request via Serenespa Elitecompanion:\n\nName: '+name+'\nContact email: '+from+'\nCity: '+city+'\nDescription: '+desc;
+ // Open user's email client with a draft to the owner
  location.href='mailto:'+FORM_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
  alert('Thanks! Your email app will open to send your profile request to us for review.');
+ // also show an on-page confirmation banner so owner notification is obvious
  closeModal();
+ const note=document.createElement('div');
+ note.id='profile-sent-note';
+ note.innerText='Email draft opened to send profile listing to '+FORM_EMAIL+'. Please complete sending from your email app.';
+ note.style.position='fixed';
+ note.style.bottom='20px';
+ note.style.left='50%';
+ note.style.transform='translateX(-50%)';
+ note.style.background='#1eb05a';
+ note.style.color='#fff';
+ note.style.padding='12px 18px';
+ note.style.borderRadius='8px';
+ note.style.boxShadow='0 8px 24px rgba(0,0,0,0.2)';
+ note.style.zIndex=9999;
+ document.body.appendChild(note);
+ setTimeout(()=>{
+   if(note&&note.parentNode)note.parentNode.removeChild(note);
+ },8000);
  if(e.target&&e.target.reset)e.target.reset();
 }
 
@@ -103,7 +129,7 @@ function renderProfilePage(){
  const name=params.get('name');
  const p=profiles.find(x=>x.name.toLowerCase()=== (name||'').toLowerCase());
  if(!p){main.innerHTML='<h2>Profile not found</h2><a class="back" href="index.html#discover">← Back to profiles</a>';return;}
-document.title=`${p.name} — Elite Companions`;
+document.title=`${p.name} — Serenespa Elitecompanion`;
 const wa=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}`;
  main.innerHTML=`<div class="profile-hero">
    <div class="ph-img"><img src="${p.img}" alt="${p.title}"></div>
