@@ -27,12 +27,18 @@ const profiles=[
 {name:'Zara',title:'Radiant Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:27,initial:'Z',verified:true,img:'img/profiles/zara.png',gallery:'img/galleries/zara',pages:4,about:'Radiant and sophisticated. I enjoy luxury shopping, travel and elegant conversation. Based in Panaji, Goa.',likes:['Luxury','Travel','Fashion','Conversation']},
 
 // Bengaluru profiles
-{name:'Aarya',title:'Stylish Companion in Indiranagar, Bengaluru',city:'Bengaluru',area:'Indiranagar',age:27,initial:'A',verified:true,img:'img/profiles/aarya.png',gallery:'img/galleries/aarya',pages:24,about:'Sociable, fashion-forward and city-savvy. Loves rooftop bars, cafés and contemporary art.',likes:['Dining','Rooftops','Art','Travel']},
-{name:'Nandini',title:'Charming Companion in Koramangala, Bengaluru',city:'Bengaluru',area:'Koramangala',age:25,initial:'N',verified:true,img:'img/profiles/nandini.png',gallery:'img/galleries/nandini',pages:18,about:'Warm, easy-going and great company for casual evenings and weekend events.',likes:['Movies','Food','Live music']},
-{name:'Rhea',title:'Elegant Companion in Whitefield, Bengaluru',city:'Bengaluru',area:'Whitefield',age:29,initial:'R',verified:true,img:'img/profiles/rhea.png',gallery:'img/galleries/rhea',pages:30,about:'Refined, well-travelled and poised. Comfortable in upscale settings and hotel stays.',likes:['Travel','Fine dining','Theatre']},
-{name:'Meera',title:'Playful Companion in HSR Layout, Bengaluru',city:'Bengaluru',area:'HSR Layout',age:24,initial:'M',verified:true,img:'img/profiles/meera.png',gallery:'img/galleries/meera',pages:16,about:'Fun-loving and energetic, great for relaxed outings and spontaneous plans.',likes:['Cafés','Shopping','Music']},
-{name:'Tanya',title:'Sophisticated Companion in Jayanagar, Bengaluru',city:'Bengaluru',area:'Jayanagar',age:28,initial:'T',verified:true,img:'img/profiles/tanya.png',gallery:'img/galleries/tanya',pages:22,about:'Polished and discreet with a love for cultural events and quiet dinners.',likes:['Culture','Reading','Dining']},
-{name:'Priyanka',title:'Radiant Companion in MG Road, Bengaluru',city:'Bengaluru',area:'MG Road',age:26,initial:'P',verified:true,img:'img/profiles/priyanka.png',gallery:'img/galleries/priyanka',pages:20,about:'Confident, engaging and comfortable in social settings and nightlife.',likes:['Nightlife','Cocktails','Conversation']},
+{name:'Aarya',title:'Stylish Companion in Indiranagar, Bengaluru',city:'Bengaluru',area:'Indiranagar',age:27,initial:'A',verified:true,img:'img/profiles/sushmita.png',gallery:'img/galleries/aarya',pages:24,about:'Sociable, fashion-forward and city-savvy. Loves rooftop bars, cafés and contemporary art.',likes:['Dining','Rooftops','Art','Travel']},
+
+{name:'Nandini',title:'Charming Companion in Koramangala, Bengaluru',city:'Bengaluru',area:'Koramangala',age:25,initial:'N',verified:true,img:'img/profiles/placeholder.svg',gallery:'img/galleries/nandini',pages:18,about:'Warm, easy-going and great company for casual evenings and weekend events.',likes:['Movies','Food','Live music']},
+
+{name:'Rhea',title:'Elegant Companion in Whitefield, Bengaluru',city:'Bengaluru',area:'Whitefield',age:29,initial:'R',verified:true,img:'img/profiles/placeholder.svg',gallery:'img/galleries/rhea',pages:30,about:'Refined, well-travelled and poised. Comfortable in upscale settings and hotel stays.',likes:['Travel','Fine dining','Theatre']},
+
+{name:'Meera',title:'Playful Companion in HSR Layout, Bengaluru',city:'Bengaluru',area:'HSR Layout',age:24,initial:'M',verified:true,img:'img/profiles/placeholder.svg',gallery:'img/galleries/meera',pages:16,about:'Fun-loving and energetic, great for relaxed outings and spontaneous plans.',likes:['Cafés','Shopping','Music']},
+
+{name:'Tanya',title:'Sophisticated Companion in Jayanagar, Bengaluru',city:'Bengaluru',area:'Jayanagar',age:28,initial:'T',verified:true,img:'img/profiles/placeholder.svg',gallery:'img/galleries/tanya',pages:22,about:'Polished and discreet with a love for cultural events and quiet dinners.',likes:['Culture','Reading','Dining']},
+
+{name:'Priyanka',title:'Radiant Companion in MG Road, Bengaluru',city:'Bengaluru',area:'MG Road',age:26,initial:'P',verified:true,img:'img/profiles/placeholder.svg',gallery:'img/galleries/priyanka',pages:20,about:'Confident, engaging and comfortable in social settings and nightlife.',likes:['Nightlife','Cocktails','Conversation']},
+
 ];
 
 function renderProfiles(list=profiles){
