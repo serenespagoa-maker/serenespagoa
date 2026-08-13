@@ -29,15 +29,15 @@ const profiles=[
 // Bengaluru profiles
 {name:'Aarya',title:'Stylish Companion in Indiranagar, Bengaluru',city:'Bengaluru',area:'Indiranagar',age:27,initial:'A',verified:true,img:'img/profiles/sushmita.png',gallery:'img/galleries/aarya',pages:24,about:'Sociable, fashion-forward and city-savvy. Loves rooftop bars, cafés and contemporary art.',likes:['Dining','Rooftops','Art','Travel']},
 
-{name:'Nandini',title:'Charming Companion in Koramangala, Bengaluru',city:'Bengaluru',area:'Koramangala',age:25,initial:'N',verified:true,img:'img/profiles/placeholder.svg',gallery:'img/galleries/nandini',pages:18,about:'Warm, easy-going and great company for casual evenings and weekend events.',likes:['Movies','Food','Live music']},
+{name:'Nandini',title:'Charming Companion in Koramangala, Bengaluru',city:'Bengaluru',area:'Koramangala',age:25,initial:'N',verified:true,img:'img/profiles/akansha.png',gallery:'img/galleries/nandini',pages:18,about:'Warm, easy-going and great company for casual evenings and weekend events.',likes:['Movies','Food','Live music']},
 
-{name:'Rhea',title:'Elegant Companion in Whitefield, Bengaluru',city:'Bengaluru',area:'Whitefield',age:29,initial:'R',verified:true,img:'img/profiles/placeholder.svg',gallery:'img/galleries/rhea',pages:30,about:'Refined, well-travelled and poised. Comfortable in upscale settings and hotel stays.',likes:['Travel','Fine dining','Theatre']},
+{name:'Rhea',title:'Elegant Companion in Whitefield, Bengaluru',city:'Bengaluru',area:'Whitefield',age:29,initial:'R',verified:true,img:'img/profiles/elif.png',gallery:'img/galleries/rhea',pages:30,about:'Refined, well-travelled and poised. Comfortable in upscale settings and hotel stays.',likes:['Travel','Fine dining','Theatre']},
 
-{name:'Meera',title:'Playful Companion in HSR Layout, Bengaluru',city:'Bengaluru',area:'HSR Layout',age:24,initial:'M',verified:true,img:'img/profiles/placeholder.svg',gallery:'img/galleries/meera',pages:16,about:'Fun-loving and energetic, great for relaxed outings and spontaneous plans.',likes:['Cafés','Shopping','Music']},
+{name:'Meera',title:'Playful Companion in HSR Layout, Bengaluru',city:'Bengaluru',area:'HSR Layout',age:24,initial:'M',verified:true,img:'img/profiles/ellya.png',gallery:'img/galleries/meera',pages:16,about:'Fun-loving and energetic, great for relaxed outings and spontaneous plans.',likes:['Cafés','Shopping','Music']},
 
-{name:'Tanya',title:'Sophisticated Companion in Jayanagar, Bengaluru',city:'Bengaluru',area:'Jayanagar',age:28,initial:'T',verified:true,img:'img/profiles/placeholder.svg',gallery:'img/galleries/tanya',pages:22,about:'Polished and discreet with a love for cultural events and quiet dinners.',likes:['Culture','Reading','Dining']},
+{name:'Tanya',title:'Sophisticated Companion in Jayanagar, Bengaluru',city:'Bengaluru',area:'Jayanagar',age:28,initial:'T',verified:true,img:'img/profiles/giya.png',gallery:'img/galleries/tanya',pages:22,about:'Polished and discreet with a love for cultural events and quiet dinners.',likes:['Culture','Reading','Dining']},
 
-{name:'Priyanka',title:'Radiant Companion in MG Road, Bengaluru',city:'Bengaluru',area:'MG Road',age:26,initial:'P',verified:true,img:'img/profiles/placeholder.svg',gallery:'img/galleries/priyanka',pages:20,about:'Confident, engaging and comfortable in social settings and nightlife.',likes:['Nightlife','Cocktails','Conversation']},
+{name:'Priyanka',title:'Radiant Companion in MG Road, Bengaluru',city:'Bengaluru',area:'MG Road',age:26,initial:'P',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/priyanka',pages:20,about:'Confident, engaging and comfortable in social settings and nightlife.',likes:['Nightlife','Cocktails','Conversation']},
 
 ];
 
@@ -48,7 +48,7 @@ function renderProfiles(list=profiles){
  const area=document.getElementById('areaFilter')?document.getElementById('areaFilter').value:'';
  let filtered=list.filter(p=>!city||p.city===city);
  if(area)filtered=filtered.filter(p=>(p.area||'').toLowerCase()===area.toLowerCase());
- box.innerHTML=filtered.map(p=>`<article class="profile"><div class="avatar" onclick="location.href='profile.html?name='+encodeURIComponent('${p.name}')" title="View profile & photos"><img src="${p.img}" alt="${p.title}"><span class="page-count">${p.pages} photos</span></div><div class="profile-info"><div class="name-row"><h3>${p.name}</h3>${p.verified?'<span class="verified">✓ Verified</span>':''}</div><div class="muted">${p.city}${p.area?' · '+p.area:''} · ${p.age} yrs</div><p class="about">${p.about}</p><div class="tags">${p.likes.map(l=>`<span>${l}</span>`).join('')}</div><div class="actions"><a class="btn green" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}">💬 WhatsApp</a><a class="btn green alt" target="_blank" rel="noopener" href="tel:+${PHONE}">📞 Call</a><a class="btn green mail" href="mailto:${EMAIL}?subject=${encodeURIComponent('Inquiry for '+p.name)}&body=${encodeURIComponent('Hi, I found '+p.name+' on Elite Companions.')}">✉️ Email</a></div></div></article>`).join('');
+ box.innerHTML=filtered.map(p=>`<article class="profile"><div class="avatar" onclick="location.href='profile.html?name='+encodeURIComponent('${p.name}')" title="View profile & photos"><img src="${p.img}" alt="${p.title}" onerror="this.onerror=null;this.src='img/profiles/placeholder.svg'"><span class="page-count">${p.pages} photos</span></div><div class="profile-info"><div class="name-row"><h3>${p.name}</h3>${p.verified?'<span class="verified">✓ Verified</span>':''}</div><div class="muted">${p.city}${p.area?' · '+p.area:''} · ${p.age} yrs</div><p class="about">${p.about}</p><div class="tags">${p.likes.map(l=>`<span>${l}</span>`).join('')}</div><div class="actions"><a class="btn green" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}">💬 WhatsApp</a><a class="btn green alt" target="_blank" rel="noopener" href="tel:+${PHONE}">📞 Call</a><a class="btn green mail" href="mailto:${EMAIL}?subject=${encodeURIComponent('Inquiry for '+p.name)}&body=${encodeURIComponent('Hi, I found '+p.name+' on Elite Companions.')}">✉️ Email</a></div></div></article>`).join('');
 }
 function searchProfiles(){
  const q=document.getElementById('searchInput').value.toLowerCase().trim();
@@ -138,7 +138,7 @@ function renderProfilePage(){
 document.title=`${p.name} — Serenespa Elitecompanion`;
 const wa=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}`;
  main.innerHTML=`<div class="profile-hero">
-   <div class="ph-img"><img src="${p.img}" alt="${p.title}"></div>
+   <div class="ph-img"><img src="${p.img}" alt="${p.title}" onerror="this.onerror=null;this.src='img/profiles/placeholder.svg'"></div>
    <div class="ph-info">
      <div class="name-row"><h1>${p.name}</h1>${p.verified?'<span class="verified">✓ Verified</span>':''}</div>
      <div class="muted big">${p.city}${p.area?' · '+p.area:''} · ${p.age} yrs</div>
