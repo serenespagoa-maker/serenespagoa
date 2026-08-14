@@ -48,7 +48,7 @@ function renderProfiles(list=profiles){
  const area=document.getElementById('areaFilter')?document.getElementById('areaFilter').value:'';
  let filtered=list.filter(p=>!city||p.city===city);
  if(area)filtered=filtered.filter(p=>(p.area||'').toLowerCase()===area.toLowerCase());
- box.innerHTML=filtered.map(p=>`<article class="profile"><div class="avatar" onclick="location.href='profile.html?name='+encodeURIComponent('${p.name}')" title="View profile & photos"><img src="${p.img}" alt="${p.title}" onerror="this.onerror=null;this.src='img/profiles/placeholder.svg'"><span class="page-count">${p.pages} photos</span></div><div class="profile-info"><div class="name-row"><h3>${p.name}</h3>${p.verified?'<span class="verified">✓ Verified</span>':''}</div><div class="muted">${p.city}${p.area?' · '+p.area:''} · ${p.age} yrs</div><p class="about">${p.about}</p><div class="tags">${p.likes.map(l=>`<span>${l}</span>`).join('')}</div><div class="actions"><a class="btn green" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}">💬 WhatsApp</a><a class="btn green alt" target="_blank" rel="noopener" href="tel:+${PHONE}">📞 Call</a><a class="btn green mail" href="mailto:${EMAIL}?subject=${encodeURIComponent('Inquiry for '+p.name)}&body=${encodeURIComponent('Hi, I found '+p.name+' on Elite Companions.')}">✉️ Email</a></div></div></article>`).join('');
+ box.innerHTML=filtered.map(p=>`<article class="profile"><a class="avatar-link" href="profile.html?name=${encodeURIComponent(p.name)}" title="View profile & photos"><div class="avatar"><img src="${p.img}" alt="${p.title}" onerror="this.onerror=null;this.src='img/profiles/placeholder.svg'"><span class="page-count">${p.pages} photos</span></div></a><div class="profile-info"><div class="name-row"><h3><a href="profile.html?name=${encodeURIComponent(p.name)}">${p.name}</a></h3>${p.verified?'<span class="verified">✓ Verified</span>':''}</div><div class="muted">${p.city}${p.area?' · '+p.area:''} · ${p.age} yrs</div><p class="about">${p.about}</p><div class="tags">${p.likes.map(l=>`<span>${l}</span>`).join('')}</div><div class="actions"><a class="btn green" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}">💬 WhatsApp</a><a class="btn green alt" target="_blank" rel="noopener" href="tel:+${PHONE}">📞 Call</a><a class="btn green mail" href="mailto:${EMAIL}?subject=${encodeURIComponent('Inquiry for '+p.name)}&body=${encodeURIComponent('Hi, I found '+p.name+' on Elite Companions.')}">✉️ Email</a></div></div></article>`).join('');
 }
 function searchProfiles(){
  const q=document.getElementById('searchInput').value.toLowerCase().trim();
@@ -136,6 +136,13 @@ function renderProfilePage(){
  const p=profiles.find(x=>x.name.toLowerCase()=== (name||'').toLowerCase());
  if(!p){main.innerHTML='<h2>Profile not found</h2><a class="back" href="index.html#discover">← Back to profiles</a>';return;}
 document.title=`${p.name} — Serenespa Elitecompanion`;
+  // Update meta description dynamically for profile pages (if <meta name="description"> exists)
+  var metaDesc = document.querySelector('meta[name="description"]');
+  if(metaDesc) metaDesc.setAttribute('content', p.title + ' — ' + p.about.slice(0,140));
+  // Ensure a canonical link tag exists and points to this profile URL (including query) so each profile has a distinct canonical
+  var linkCanon = document.querySelector('link[rel="canonical"]');
+  var canonicalHref = 'https://serenespagoa.com/profile.html?name=' + encodeURIComponent(p.name);
+  if(linkCanon) linkCanon.setAttribute('href', canonicalHref); else { linkCanon = document.createElement('link'); linkCanon.setAttribute('rel','canonical'); linkCanon.setAttribute('href', canonicalHref); document.getElementsByTagName('head')[0].appendChild(linkCanon); }
 const wa=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}`;
  main.innerHTML=`<div class="profile-hero">
    <div class="ph-img"><img src="${p.img}" alt="${p.title}" onerror="this.onerror=null;this.src='img/profiles/placeholder.svg'"></div>
@@ -157,7 +164,7 @@ const wa=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I 
  if(!box)return;
  let html='';
  for(let i=1;i<=p.pages;i++){
-   html+=`<figure class="gitem"><img src="${p.gallery}/${i}.png" alt="${p.name} photo ${i}" loading="lazy" onerror="this.onerror=null;this.src='img/profiles/placeholder.svg'"><figcaption>Photo ${i}</figcaption></figure>`;
+   html+=`<figure class="gitem"><img src="${p.gallery}/${i}.png" alt="${p.name} — ${p.title} — photo ${i}" loading="lazy" onerror="this.onerror=null;this.src='img/profiles/placeholder.svg'"><figcaption>Photo ${i}</figcaption></figure>`;
  }
  box.innerHTML=html;
 }
