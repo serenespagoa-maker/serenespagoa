@@ -135,10 +135,10 @@ function renderProfilePage(){
  const name=params.get('name');
  const p=profiles.find(x=>x.name.toLowerCase()=== (name||'').toLowerCase());
  if(!p){main.innerHTML='<h2>Profile not found</h2><a class="back" href="index.html#discover">← Back to profiles</a>';return;}
-document.title=`${p.name} — Serenespa Elitecompanion`;
+document.title=`${p.name} | ${p.city} | Serene Spa`;
   // Update meta description dynamically for profile pages (if <meta name="description"> exists)
   var metaDesc = document.querySelector('meta[name="description"]');
-  if(metaDesc) metaDesc.setAttribute('content', p.title + ' — ' + p.about.slice(0,140));
+  if(metaDesc) metaDesc.setAttribute('content', `${p.name} | ${p.city}${p.area ? ' · ' + p.area : ''} | Serene Spa profile details and location information.`);
   // Ensure a canonical link tag exists and points to this profile URL (including query) so each profile has a distinct canonical
   var linkCanon = document.querySelector('link[rel="canonical"]');
   var canonicalHref = 'https://serenespagoa.com/profile.html?name=' + encodeURIComponent(p.name);
