@@ -2,6 +2,19 @@ const WHATSAPP='919845700129';
 const PHONE='919845700129';
 const EMAIL='elitecompanionsgbl@gmail.com';
 
+// Derive profile-specific service keywords from that profile's own "about" text,
+// so profile keyword metadata isn't the same generic list for every profile.
+function deriveServiceKeywords(about){
+  const a=(about||'').toLowerCase();
+  const kws=[];
+  if(a.includes('female-to-male')||a.includes('female to male')||a.includes('f to m'))kws.push('female to male massage');
+  if(a.includes('body-to-body')||a.includes('body to body'))kws.push('body-to-body massage');
+  if(a.includes('b2b'))kws.push('B2B massage');
+  if(a.includes('erotic'))kws.push('erotic massage');
+  if(a.includes('body massage'))kws.push('body massage in Goa');
+  return kws.length?kws:['body massage in Goa'];
+}
+
 // City -> areas map for SEO-driven area selection
 const AREAS={
   'Goa':['Panaji','Calangute','Baga','Vagator','Anjuna','Candolim','Margao','Benaulim','Colva','Morjim'],
@@ -14,30 +27,30 @@ const AREAS={
 };
 
 const profiles=[
-{name:'Akansha',title:'Elegant Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:26,initial:'A',verified:true,img:'img/profiles/akansha.png',gallery:'img/galleries/akansha',pages:12,about:'Glamorous, well-travelled and outgoing. I love fine dining, evening city lights and intelligent conversation. Now based in Panaji, Goa — perfect for dinner dates and evening company.',likes:['Dining','Travel','Music','Conversation']},
-{name:'Elif',title:'Warm Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:24,initial:'E',verified:true,img:'img/profiles/elif.png',gallery:'img/galleries/elif',pages:12,about:'Warm and playful with a global spirit. I enjoy sunsets by the sea, modern art and good cafés. Available in Panaji and across Goa.',likes:['Beach','Art','Cafés','Dancing']},
-{name:'Ellya',title:'Sophisticated Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:27,initial:'E',verified:true,img:'img/profiles/ellya.png',gallery:'img/galleries/ellya',pages:12,about:'Sophisticated and discreet. Passionate about luxury stays, designer style and refined company. Based in Panaji, Goa.',likes:['Luxury','Fashion','Travel','Fine dining']},
-{name:'Giya',title:'Vibrant Companion in Calangute, Goa',city:'Goa',area:'Calangute',goa:true,age:25,initial:'G',verified:true,img:'img/profiles/giya.png',gallery:'img/galleries/giya',pages:12,about:'Born and raised in Goa. I love beach sunsets, live music at beach shacks, long drives along the coast and meeting interesting travellers. Let\'s explore Goa together — from hidden beaches to the best local food spots.',likes:['Beach','Live music','Sunset drives','Local food','Photography','Adventure']},
-{name:'Kirann',title:'Bubbly Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:23,initial:'K',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/kirann',pages:12,about:'Bubbly and down to earth. Enjoy movies, long drives and good food with even better company. Available in Panaji and around Goa.',likes:['Movies','Road trips','Food','Fitness']},
-{name:'Sara',title:'Elegant Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:28,initial:'S',verified:true,img:'img/profiles/sara.png',gallery:'img/galleries/sara',pages:12,about:'Elegant, charismatic and well-spoken. Interested in culture, theatre and quiet evenings with class. Now welcoming guests in Panaji, Goa.',likes:['Theatre','Culture','Wine','Reading']},
-{name:'Selena',title:'Charming Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:25,initial:'S',verified:true,img:'img/profiles/selena.png',gallery:'img/galleries/selena',pages:12,about:'Charming and graceful with an eye for style. Love beach clubs, shopping and lively conversations. Available in Panaji, Goa.',likes:['Beach clubs','Shopping','Style','Parties']},
-{name:'Ria',title:'Playful Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:24,initial:'R',verified:true,img:'img/profiles/ria.png',gallery:'img/galleries/ria',pages:4,about:'Playful and energetic. I love exploring the city, trying new cafés and keeping conversations lively. Available in Panaji, Goa.',likes:['Cafés','Music','Shopping','Travel']},
-{name:'Nisha',title:'Graceful Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:26,initial:'N',verified:true,img:'img/profiles/nisha.png',gallery:'img/galleries/nisha',pages:4,about:'Graceful and well-spoken with a calm, elegant presence. I enjoy art, fine dining and quiet evenings. Now in Panaji, Goa.',likes:['Art','Fine dining','Reading','Wine']},
-{name:'Priya',title:'Enchanting Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:25,initial:'P',verified:true,img:'img/profiles/priya.png',gallery:'img/galleries/priya',pages:4,about:'Enchanting and charismatic. I love rooftop dinners, dance and living in the moment. Available in Panaji, Goa.',likes:['Dancing','Rooftops','Dining','Adventure']},
-{name:'Zara',title:'Radiant Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:27,initial:'Z',verified:true,img:'img/profiles/zara.png',gallery:'img/galleries/zara',pages:4,about:'Radiant and sophisticated. I enjoy luxury shopping, travel and elegant conversation. Based in Panaji, Goa.',likes:['Luxury','Travel','Fashion','Conversation']},
+{name:'Akansha',title:'Elegant Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:26,initial:'A',verified:true,img:'img/profiles/akansha.png',gallery:'img/galleries/akansha',pages:12,about:'Female-to-male and body-to-body massage services in Panaji, Goa.',likes:['Dining','Travel','Music','Conversation']},
+{name:'Elif',title:'Warm Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:24,initial:'E',verified:true,img:'img/profiles/elif.png',gallery:'img/galleries/elif',pages:12,about:'Body-to-body and female-to-male massage services in Panaji, Goa.',likes:['Beach','Art','Cafés','Dancing']},
+{name:'Ellya',title:'Sophisticated Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:27,initial:'E',verified:true,img:'img/profiles/ellya.png',gallery:'img/galleries/ellya',pages:12,about:'Professional body massage and F to M services available in Panaji, Goa.',likes:['Luxury','Fashion','Travel','Fine dining']},
+{name:'Giya',title:'Vibrant Companion in Calangute, Goa',city:'Goa',area:'Calangute',goa:true,age:25,initial:'G',verified:true,img:'img/profiles/giya.png',gallery:'img/galleries/giya',pages:12,about:'Body massage and body-to-body services in Calangute and Panaji, Goa.',likes:['Beach','Live music','Sunset drives','Local food','Photography','Adventure']},
+{name:'Kirann',title:'Bubbly Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:23,initial:'K',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/kirann',pages:12,about:'Female-to-male massage and body massage services in Panaji, Goa.',likes:['Movies','Road trips','Food','Fitness']},
+{name:'Sara',title:'Elegant Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:28,initial:'S',verified:true,img:'img/profiles/sara.png',gallery:'img/galleries/sara',pages:12,about:'Female-to-male massage and B2B body-to-body sessions in Panaji, Goa.',likes:['Theatre','Culture','Wine','Reading']},
+{name:'Selena',title:'Charming Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:25,initial:'S',verified:true,img:'img/profiles/selena.png',gallery:'img/galleries/selena',pages:12,about:'Body-to-body massage and organized spa sessions in Panaji, Goa.',likes:['Beach clubs','Shopping','Style','Parties']},
+{name:'Ria',title:'Playful Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:24,initial:'R',verified:true,img:'img/profiles/ria.png',gallery:'img/galleries/ria',pages:4,about:'Body massage and female-to-male massage services in Panaji, Goa.',likes:['Cafés','Music','Shopping','Travel']},
+{name:'Nisha',title:'Graceful Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:26,initial:'N',verified:true,img:'img/profiles/nisha.png',gallery:'img/galleries/nisha',pages:4,about:'Relaxing body massage and F to M massage services in Panaji, Goa.',likes:['Art','Fine dining','Reading','Wine']},
+{name:'Priya',title:'Enchanting Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:25,initial:'P',verified:true,img:'img/galleries/priya/1.png',gallery:'img/galleries/priya',pages:4,about:'Professional body-to-body and female-to-male massage in Panaji, Goa.',likes:['Dancing','Rooftops','Dining','Adventure']},
+{name:'Zara',title:'Radiant Companion in Panaji, Goa',city:'Goa',area:'Panaji',goa:true,age:27,initial:'Z',verified:true,img:'img/profiles/zara.png',gallery:'img/galleries/zara',pages:4,about:'Erotic massage and body-to-body sessions in Panaji, Goa.',likes:['Luxury','Travel','Fashion','Conversation']},
 
 // Bengaluru profiles
-{name:'Aarya',title:'Stylish Companion in Indiranagar, Bengaluru',city:'Bengaluru',area:'Indiranagar',age:27,initial:'A',verified:true,img:'img/profiles/sushmita.png',gallery:'img/galleries/aarya',pages:12,about:'Sociable, fashion-forward and city-savvy. Loves rooftop bars, cafés and contemporary art.',likes:['Dining','Rooftops','Art','Travel']},
+{name:'Aarya',title:'Stylish Companion in Indiranagar, Bengaluru',city:'Bengaluru',area:'Indiranagar',age:27,initial:'A',verified:true,img:'img/profiles/sushmita.png',gallery:'img/galleries/aarya',pages:12,about:'Body massage and body-to-body massage services in Indiranagar, Bengaluru.',likes:['Dining','Rooftops','Art','Travel']},
 
-{name:'Nandini',title:'Charming Companion in Koramangala, Bengaluru',city:'Bengaluru',area:'Koramangala',age:25,initial:'N',verified:true,img:'img/profiles/akansha.png',gallery:'img/galleries/nandini',pages:12,about:'Warm, easy-going and great company for casual evenings and weekend events.',likes:['Movies','Food','Live music']},
+{name:'Nandini',title:'Charming Companion in Koramangala, Bengaluru',city:'Bengaluru',area:'Koramangala',age:25,initial:'N',verified:true,img:'img/profiles/akansha.png',gallery:'img/galleries/nandini',pages:12,about:'Female-to-male massage and body massage services in Koramangala, Bengaluru.',likes:['Movies','Food','Live music']},
 
-{name:'Rhea',title:'Elegant Companion in Whitefield, Bengaluru',city:'Bengaluru',area:'Whitefield',age:29,initial:'R',verified:true,img:'img/profiles/elif.png',gallery:'img/galleries/rhea',pages:12,about:'Refined, well-travelled and poised. Comfortable in upscale settings and hotel stays.',likes:['Travel','Fine dining','Theatre']},
+{name:'Rhea',title:'Elegant Companion in Whitefield, Bengaluru',city:'Bengaluru',area:'Whitefield',age:29,initial:'R',verified:true,img:'img/profiles/elif.png',gallery:'img/galleries/rhea',pages:12,about:'Body-to-body massage and B2B spa sessions in Whitefield, Bengaluru.',likes:['Travel','Fine dining','Theatre']},
 
-{name:'Meera',title:'Playful Companion in HSR Layout, Bengaluru',city:'Bengaluru',area:'HSR Layout',age:24,initial:'M',verified:true,img:'img/profiles/ellya.png',gallery:'img/galleries/meera',pages:12,about:'Fun-loving and energetic, great for relaxed outings and spontaneous plans.',likes:['Cafés','Shopping','Music']},
+{name:'Meera',title:'Playful Companion in HSR Layout, Bengaluru',city:'Bengaluru',area:'HSR Layout',age:24,initial:'M',verified:true,img:'img/profiles/ellya.png',gallery:'img/galleries/meera',pages:12,about:'Relaxing body massage and F to M massage in HSR Layout, Bengaluru.',likes:['Cafés','Shopping','Music']},
 
-{name:'Tanya',title:'Sophisticated Companion in Jayanagar, Bengaluru',city:'Bengaluru',area:'Jayanagar',age:28,initial:'T',verified:true,img:'img/profiles/giya.png',gallery:'img/galleries/tanya',pages:12,about:'Polished and discreet with a love for cultural events and quiet dinners.',likes:['Culture','Reading','Dining']},
+{name:'Tanya',title:'Sophisticated Companion in Jayanagar, Bengaluru',city:'Bengaluru',area:'Jayanagar',age:28,initial:'T',verified:true,img:'img/profiles/giya.png',gallery:'img/galleries/tanya',pages:12,about:'Professional body-to-body and female-to-male massage in Jayanagar, Bengaluru.',likes:['Culture','Reading','Dining']},
 
-{name:'Priyanka',title:'Radiant Companion in MG Road, Bengaluru',city:'Bengaluru',area:'MG Road',age:26,initial:'P',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/priyanka',pages:12,about:'Confident, engaging and comfortable in social settings and nightlife.',likes:['Nightlife','Cocktails','Conversation']},
+{name:'Priyanka',title:'Radiant Companion in MG Road, Bengaluru',city:'Bengaluru',area:'MG Road',age:26,initial:'P',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/priyanka',pages:12,about:'B2B massage and body-to-body sessions in MG Road, Bengaluru.',likes:['Nightlife','Cocktails','Conversation']},
 
 ];
 
@@ -139,6 +152,10 @@ document.title=`${p.name} | ${p.city} | Serene Spa`;
   // Update meta description dynamically for profile pages (if <meta name="description"> exists)
   var metaDesc = document.querySelector('meta[name="description"]');
   if(metaDesc) metaDesc.setAttribute('content', `${p.name} | ${p.city}${p.area ? ' · ' + p.area : ''} | Serene Spa profile details and location information.`);
+  // Per-profile keywords, derived from that profile's own name/city/area/service info
+  var metaKw = document.querySelector('meta[name="keywords"]');
+  var kwContent = [p.name, p.city, p.area].filter(Boolean).concat(deriveServiceKeywords(p.about)).join(', ');
+  if(metaKw) metaKw.setAttribute('content', kwContent); else { metaKw=document.createElement('meta'); metaKw.setAttribute('name','keywords'); metaKw.setAttribute('content', kwContent); document.getElementsByTagName('head')[0].appendChild(metaKw); }
   // Ensure a canonical link tag exists and points to this profile URL (including query) so each profile has a distinct canonical
   var linkCanon = document.querySelector('link[rel="canonical"]');
   var canonicalHref = 'https://serenespagoa.com/profile.html?name=' + encodeURIComponent(p.name);
