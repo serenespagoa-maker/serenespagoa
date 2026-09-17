@@ -16,13 +16,13 @@ function deriveServiceKeywords(about){
   if(a.includes('sensual'))kws.push('sensual massage');
   if(a.includes('therapeutic')||a.includes('relaxation'))kws.push('therapeutic massage');
   if(a.includes('spa'))kws.push('spa session');
-  if(a.includes('body massage'))kws.push('body massage in Bengaluru');
-  return kws.length?kws:['body massage in Bengaluru'];
+  if(a.includes('body massage'))kws.push('body massage in Bangalore');
+  return kws.length?kws:['body massage in Bangalore'];
 }
 
 // City -> areas map for SEO-driven area selection
 const AREAS={
-  'Bengaluru':['Indiranagar','Koramangala','Whitefield','HSR Layout','Jayanagar','Malleshwaram','MG Road','Brigade Road','Electronic City','Marathahalli',''],
+  'Bangalore':['Indiranagar','Koramangala','Whitefield','HSR Layout','Jayanagar','Malleshwaram','MG Road','Brigade Road','Electronic City','Marathahalli',''],
   'Mumbai':['Bandra','Andheri','Juhu','Colaba','Worli','Powai','Lower Parel','Malad','Dadar','Goregaon'],
   'Chennai':['T. Nagar','Adyar','Anna Nagar','Velachery','Mylapore','Besant Nagar','OMR','Guindy','Nungambakkam','Thiruvanmiyur'],
   'Kolkata':['Park Street','Salt Lake','Kankurgachi','Ballygunge','New Town','Gariahat','Howrah','Behala','Dumdum','Rajarhat'],
@@ -31,29 +31,29 @@ const AREAS={
 };
 
 const profiles=[
-{name:'Akansha',title:'Elegant Companion in Indiranagar, Bengaluru',city:'Bengaluru',area:'Indiranagar',age:26,initial:'A',verified:true,img:'img/profiles/akansha.png',gallery:'img/galleries/akansha',pages:12,about:'Specialises in female to male massage and full body treatments in Indiranagar, Bengaluru.',likes:['Dining','Travel','Music','Conversation']},
-{name:'Rosey',title:'Warm Companion in Koramangala, Bengaluru',city:'Bengaluru',area:'Koramangala',age:24,initial:'E',verified:true,img:'img/profiles/elif.png',gallery:'img/galleries/elif',pages:12,about:'A soothing blend of body to body massage and deep tissue therapy in Koramangala, Bengaluru.',likes:['Beach','Art','Cafés','Dancing']},
-{name:'Ellya',title:'Sophisticated Companion in Whitefield, Bengaluru',city:'Bengaluru',area:'Whitefield',age:27,initial:'E',verified:true,img:'img/profiles/ellya.png',gallery:'img/galleries/ellya',pages:12,about:'Professional F2M and therapeutic massage sessions in Whitefield, Bengaluru.',likes:['Luxury','Fashion','Travel','Fine dining']},
-{name:'Chandana',title:'Vibrant Companion in HSR Layout, Bengaluru',city:'Bengaluru',area:'HSR Layout',age:25,initial:'G',verified:true,img:'img/profiles/giya.png',gallery:'img/galleries/giya',pages:12,about:'Sensual body massage and B2B sessions across HSR Layout and Bengaluru.',likes:['Live music','Sunset drives','Local food','Photography','Adventure']},
-{name:'Kirann',title:'Bubbly Companion in Jayanagar, Bengaluru',city:'Bengaluru',area:'Jayanagar',age:23,initial:'K',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/kirann',pages:12,about:'Female to male massage paired with deep relaxation techniques in Jayanagar, Bengaluru.',likes:['Movies','Road trips','Food','Fitness']},
-{name:'Sara',title:'Elegant Companion in Malleshwaram, Bengaluru',city:'Bengaluru',area:'Malleshwaram',age:28,initial:'S',verified:true,img:'img/profiles/sara.png',gallery:'img/galleries/sara',pages:12,about:'Combines B2B massage with a female to male approach in Malleshwaram, Bengaluru.',likes:['Theatre','Culture','Wine','Reading']},
-{name:'Selena',title:'Charming Companion in MG Road, Bengaluru',city:'Bengaluru',area:'MG Road',age:25,initial:'S',verified:true,img:'img/profiles/selena.png',gallery:'img/galleries/selena',pages:12,about:'Body to body massage and premium spa sessions in MG Road, Bengaluru.',likes:['Shopping','Style','Parties']},
-{name:'Chandini',title:'Playful Companion in Brigade Road, Bengaluru',city:'Bengaluru',area:'Brigade Road',age:24,initial:'R',verified:true,img:'img/profiles/ria.png',gallery:'img/galleries/ria',pages:4,about:'Offers body massage alongside female to male sessions in Brigade Road, Bengaluru.',likes:['Cafés','Music','Shopping','Travel']},
-{name:'Nisha',title:'Graceful Companion in Electronic City, Bengaluru',city:'Bengaluru',area:'Electronic City',age:26,initial:'N',verified:true,img:'img/profiles/nisha.png',gallery:'img/galleries/nisha',pages:4,about:'Calming F2M massage and relaxation therapy in Electronic City, Bengaluru.',likes:['Art','Fine dining','Reading','Wine']},
-{name:'Priya',title:'Enchanting Companion in Marathahalli, Bengaluru',city:'Bengaluru',area:'Marathahalli',age:25,initial:'P',verified:true,img:'img/galleries/priya/1.png',gallery:'img/galleries/priya',pages:4,about:'Erotic massage blended with body to body sessions in Marathahalli, Bengaluru.',likes:['Dancing','Rooftops','Dining','Adventure']},
-{name:'Zara',title:'Radiant Companion in Koramangala, Bengaluru',city:'Bengaluru',area:'Koramangala',age:27,initial:'Z',verified:true,img:'img/profiles/zara.png',gallery:'img/galleries/zara',pages:4,about:'Sensual erotic massage and B2B techniques in Koramangala, Bengaluru.',likes:['Luxury','Travel','Fashion','Conversation']},
+{name:'Akansha',title:'Elegant Companion in Indiranagar, Bangalore',city:'Bangalore',area:'Indiranagar',age:26,initial:'A',verified:true,img:'img/profiles/akansha.png',gallery:'img/galleries/akansha',pages:12,about:'Specialises in female to male massage and full body treatments in Indiranagar, Bangalore.',likes:['Dining','Travel','Music','Conversation']},
+{name:'Rosey',title:'Warm Companion in Koramangala, Bangalore',city:'Bangalore',area:'Koramangala',age:24,initial:'E',verified:true,img:'img/profiles/elif.png',gallery:'img/galleries/elif',pages:12,about:'A soothing blend of body to body massage and deep tissue therapy in Koramangala, Bangalore.',likes:['Beach','Art','Cafés','Dancing']},
+{name:'Ellya',title:'Sophisticated Companion in Whitefield, Bangalore',city:'Bangalore',area:'Whitefield',age:27,initial:'E',verified:true,img:'img/profiles/ellya.png',gallery:'img/galleries/ellya',pages:12,about:'Professional F2M and therapeutic massage sessions in Whitefield, Bangalore.',likes:['Luxury','Fashion','Travel','Fine dining']},
+{name:'Chandana',title:'Vibrant Companion in HSR Layout, Bangalore',city:'Bangalore',area:'HSR Layout',age:25,initial:'G',verified:true,img:'img/profiles/giya.png',gallery:'img/galleries/giya',pages:12,about:'Sensual body massage and B2B sessions across HSR Layout and Bangalore.',likes:['Live music','Sunset drives','Local food','Photography','Adventure']},
+{name:'Kirann',title:'Bubbly Companion in Jayanagar, Bangalore',city:'Bangalore',area:'Jayanagar',age:23,initial:'K',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/kirann',pages:12,about:'Female to male massage paired with deep relaxation techniques in Jayanagar, Bangalore.',likes:['Movies','Road trips','Food','Fitness']},
+{name:'Sara',title:'Elegant Companion in Malleshwaram, Bangalore',city:'Bangalore',area:'Malleshwaram',age:28,initial:'S',verified:true,img:'img/profiles/sara.png',gallery:'img/galleries/sara',pages:12,about:'Combines B2B massage with a female to male approach in Malleshwaram, Bangalore.',likes:['Theatre','Culture','Wine','Reading']},
+{name:'Selena',title:'Charming Companion in MG Road, Bangalore',city:'Bangalore',area:'MG Road',age:25,initial:'S',verified:true,img:'img/profiles/selena.png',gallery:'img/galleries/selena',pages:12,about:'Body to body massage and premium spa sessions in MG Road, Bangalore.',likes:['Shopping','Style','Parties']},
+{name:'Chandini',title:'Playful Companion in Brigade Road, Bangalore',city:'Bangalore',area:'Brigade Road',age:24,initial:'R',verified:true,img:'img/profiles/ria.png',gallery:'img/galleries/ria',pages:4,about:'Offers body massage alongside female to male sessions in Brigade Road, Bangalore.',likes:['Cafés','Music','Shopping','Travel']},
+{name:'Nisha',title:'Graceful Companion in Electronic City, Bangalore',city:'Bangalore',area:'Electronic City',age:26,initial:'N',verified:true,img:'img/profiles/nisha.png',gallery:'img/galleries/nisha',pages:4,about:'Calming F2M massage and relaxation therapy in Electronic City, Bangalore.',likes:['Art','Fine dining','Reading','Wine']},
+{name:'Priya',title:'Enchanting Companion in Marathahalli, Bangalore',city:'Bangalore',area:'Marathahalli',age:25,initial:'P',verified:true,img:'img/galleries/priya/1.png',gallery:'img/galleries/priya',pages:4,about:'Erotic massage blended with body to body sessions in Marathahalli, Bangalore.',likes:['Dancing','Rooftops','Dining','Adventure']},
+{name:'Zara',title:'Radiant Companion in Koramangala, Bangalore',city:'Bangalore',area:'Koramangala',age:27,initial:'Z',verified:true,img:'img/profiles/zara.png',gallery:'img/galleries/zara',pages:4,about:'Sensual erotic massage and B2B techniques in Koramangala, Bangalore.',likes:['Luxury','Travel','Fashion','Conversation']},
 
-{name:'Aarya',title:'Stylish Companion in Indiranagar, Bengaluru',city:'Bengaluru',area:'Indiranagar',age:27,initial:'A',verified:true,img:'img/profiles/sushmita.png',gallery:'img/galleries/aarya',pages:12,about:'Body massage and body to body sessions in Indiranagar, Bengaluru.',likes:['Dining','Rooftops','Art','Travel']},
+{name:'Aarya',title:'Stylish Companion in Indiranagar, Bangalore',city:'Bangalore',area:'Indiranagar',age:27,initial:'A',verified:true,img:'img/profiles/sushmita.png',gallery:'img/galleries/aarya',pages:12,about:'Body massage and body to body sessions in Indiranagar, Bangalore.',likes:['Dining','Rooftops','Art','Travel']},
 
-{name:'Nandini',title:'Charming Companion in Koramangala, Bengaluru',city:'Bengaluru',area:'Koramangala',age:25,initial:'N',verified:true,img:'img/profiles/akansha.png',gallery:'img/galleries/nandini',pages:12,about:'Female to male massage and full body treatments in Koramangala, Bengaluru.',likes:['Movies','Food','Live music']},
+{name:'Nandini',title:'Charming Companion in Koramangala, Bangalore',city:'Bangalore',area:'Koramangala',age:25,initial:'N',verified:true,img:'img/profiles/akansha.png',gallery:'img/galleries/nandini',pages:12,about:'Female to male massage and full body treatments in Koramangala, Bangalore.',likes:['Movies','Food','Live music']},
 
-{name:'Rhea',title:'Elegant Companion in Whitefield, Bengaluru',city:'Bengaluru',area:'Whitefield',age:29,initial:'R',verified:true,img:'img/profiles/elif.png',gallery:'img/galleries/rhea',pages:12,about:'Body to body massage and B2B spa sessions in Whitefield, Bengaluru.',likes:['Travel','Fine dining','Theatre']},
+{name:'Rhea',title:'Elegant Companion in Whitefield, Bangalore',city:'Bangalore',area:'Whitefield',age:29,initial:'R',verified:true,img:'img/profiles/elif.png',gallery:'img/galleries/rhea',pages:12,about:'Body to body massage and B2B spa sessions in Whitefield, Bangalore.',likes:['Travel','Fine dining','Theatre']},
 
-{name:'Meera',title:'Playful Companion in HSR Layout, Bengaluru',city:'Bengaluru',area:'HSR Layout',age:24,initial:'M',verified:true,img:'img/profiles/ellya.png',gallery:'img/galleries/meera',pages:12,about:'Relaxing F2M massage and deep tissue therapy in HSR Layout, Bengaluru.',likes:['Cafés','Shopping','Music']},
+{name:'Meera',title:'Playful Companion in HSR Layout, Bangalore',city:'Bangalore',area:'HSR Layout',age:24,initial:'M',verified:true,img:'img/profiles/ellya.png',gallery:'img/galleries/meera',pages:12,about:'Relaxing F2M massage and deep tissue therapy in HSR Layout, Bangalore.',likes:['Cafés','Shopping','Music']},
 
-{name:'Tanya',title:'Sophisticated Companion in Jayanagar, Bengaluru',city:'Bengaluru',area:'Jayanagar',age:28,initial:'T',verified:true,img:'img/profiles/giya.png',gallery:'img/galleries/tanya',pages:12,about:'Professional body to body and female to male massage in Jayanagar, Bengaluru.',likes:['Culture','Reading','Dining']},
+{name:'Tanya',title:'Sophisticated Companion in Jayanagar, Bangalore',city:'Bangalore',area:'Jayanagar',age:28,initial:'T',verified:true,img:'img/profiles/giya.png',gallery:'img/galleries/tanya',pages:12,about:'Professional body to body and female to male massage in Jayanagar, Bangalore.',likes:['Culture','Reading','Dining']},
 
-{name:'Priyanka',title:'Radiant Companion in MG Road, Bengaluru',city:'Bengaluru',area:'MG Road',age:26,initial:'P',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/priyanka',pages:12,about:'B2B massage and erotic body to body sessions in MG Road, Bengaluru.',likes:['Nightlife','Cocktails','Conversation']},
+{name:'Priyanka',title:'Radiant Companion in MG Road, Bangalore',city:'Bangalore',area:'MG Road',age:26,initial:'P',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/priyanka',pages:12,about:'B2B massage and erotic body to body sessions in MG Road, Bangalore.',likes:['Nightlife','Cocktails','Conversation']},
 
 ];
 
@@ -213,6 +213,6 @@ if(document.getElementById('profileMain')){
   renderProfiles();
   if(document.getElementById('areaFilter'))updateAreaFilter();
 const firstTab=document.querySelector('.city-tabs button');
-  if(firstTab)exploreCity('Bengaluru',firstTab);
+  if(firstTab)exploreCity('Bangalore',firstTab);
   initSpotlight();
 }
