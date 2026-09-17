@@ -2,9 +2,14 @@
 *{box-sizing:border-box}
 body{margin:0;color:#211e25;background:#fbf9f7;font-family:'DM Sans',sans-serif}
 a{text-decoration:none;color:inherit}
+h1{color:#6b1f3d}
+h2{color:#8d7466}
+h3{color:#a8503a}
 .header{height:76px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e8e2dc;background:#fff}
 .logo{font-weight:800;letter-spacing:.18em;font-size:20px;color:#1a1a1a}
-.header .logo{font-size:22px;background:linear-gradient(120deg,#c0392b,#a83279);-webkit-background-clip:text;background-clip:text;color:transparent}
+.header .logo{display:flex;flex-direction:column;line-height:1.1;font-weight:400;letter-spacing:normal;font-size:inherit;background:none;color:inherit}
+.header .logo .logo-main{font-family:'Playfair Display',serif;font-weight:600;font-style:italic;font-size:23px;background:linear-gradient(120deg,#c0392b,#a83279);-webkit-background-clip:text;background-clip:text;color:transparent}
+.header .logo .logo-tag{font-size:9px;letter-spacing:.28em;font-weight:700;color:#8d7466;margin-top:2px}
 .header nav{display:flex;gap:28px;font-size:14px}
 .btn{border:0;border-radius:999px;padding:13px 21px;font-weight:700;cursor:pointer}
 .primary{background:#201c23;color:#fff}
@@ -12,7 +17,7 @@ a{text-decoration:none;color:inherit}
 .light{background:#fff;color:#201c23}
 .hero{min-height:590px;padding:90px 8%;display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center;background:linear-gradient(135deg,#f6eee8,#fbf9f7)}
 .eyebrow{font-size:11px;letter-spacing:.18em;font-weight:700;color:#8d7466}
-.hero h1{font-size:68px;line-height:1.02;margin:16px 0}
+.hero h1{font-size:44px;line-height:1.1;margin:16px 0}
 .hero h1 em{font-family:'Playfair Display',serif;font-weight:600}
 .hero h2{font-size:22px;font-weight:500;font-style:italic;font-family:'Playfair Display',serif;color:#8d7466;margin:0 0 18px}
 .hero p{font-size:18px;line-height:1.7;color:#716a65;max-width:570px}
@@ -115,28 +120,28 @@ a{text-decoration:none;color:inherit}
 .benefit h3{margin:0 0 6px;font-size:18px}
 .benefit p{color:#716a65;font-size:13px;line-height:1.6;margin:0}
 
-/* Goa trust section */
-.goa-trust{background:linear-gradient(135deg,#0e3b2e,#1a6b4a 55%,#2d9d6f)}
-.goa-trust .goa-head{max-width:640px;margin-bottom:40px}
-.goa-trust .goa-head .eyebrow{color:#a8e6c8}
-.goa-trust .goa-head h2{color:#fff;font-size:42px;margin:8px 0}
-.goa-trust .goa-head p{color:#c9e8d8;font-size:17px;line-height:1.7}
-.goa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px}
-.goa-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:28px;color:#fff}
-.goa-card .goa-icon{font-size:32px;margin-bottom:14px}
-.goa-card h3{margin:0 0 8px;font-size:18px;color:#fff}
-.goa-card p{color:#c9e8d8;font-size:13px;line-height:1.65;margin:0}
-.goa-banner{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:18px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.goa-banner strong{color:#fff;font-size:22px;display:block;margin-bottom:4px}
-.goa-banner p{color:#c9e8d8;font-size:14px;margin:0}
-.goa-banner .btn{background:#fff;color:#0e3b2e}
-.goa-banner .btn:hover{filter:brightness(.95)}
+/* Trust section */
+.trust-section{background:linear-gradient(135deg,#0e3b2e,#1a6b4a 55%,#2d9d6f)}
+.trust-section .trust-head{max-width:640px;margin-bottom:40px}
+.trust-section .trust-head .eyebrow{color:#a8e6c8}
+.trust-section .trust-head h2{color:#fff;font-size:42px;margin:8px 0}
+.trust-section .trust-head p{color:#c9e8d8;font-size:17px;line-height:1.7}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px}
+.trust-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:28px;color:#fff}
+.trust-card .trust-icon{font-size:32px;margin-bottom:14px}
+.trust-card h3{margin:0 0 8px;font-size:18px;color:#fff}
+.trust-card p{color:#c9e8d8;font-size:13px;line-height:1.65;margin:0}
+.trust-banner{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:18px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.trust-banner strong{color:#fff;font-size:22px;display:block;margin-bottom:4px}
+.trust-banner p{color:#c9e8d8;font-size:14px;margin:0}
+.trust-banner .btn{background:#fff;color:#0e3b2e}
+.trust-banner .btn:hover{filter:brightness(.95)}
 
 @media(max-width:800px){
-  .goa-grid{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:500px){
-  .goa-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr}
 }
 
 @media(max-width:800px){
@@ -193,7 +198,7 @@ footer div:last-child{display:flex;gap:20px}
 @media(max-width:800px){
   .header nav{display:none}
   .hero{grid-template-columns:1fr;padding:60px 6%}
-  .hero h1{font-size:48px}
+  .hero h1{font-size:32px}
   .section{padding:60px 6%}
   .grid{grid-template-columns:repeat(2,1fr)}
   .cities,.safety-grid{grid-template-columns:1fr 1fr}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Serene Spa | Bengaluru</title>
+<meta name="description" content="Contact Serene Spa in Bengaluru by phone, WhatsApp or email to check availability, ask questions or submit a profile for review.">
+<meta name="keywords" content="contact Serene Spa, Serene Spa Bengaluru, book massage Bengaluru, WhatsApp Serene Spa">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://serenespagoa.com/contact.html">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+<a class="logo" href="index.html"><span class="logo-main">Serene Spa</span><span class="logo-tag">ELITE COMPANIONS</span></a>
+  <nav><a href="index.html#discover">Discover</a><a href="index.html#explore">Explore by City</a><a href="locations/">Locations</a><a href="index.html#how">How it Works</a><a href="index.html#why">Why Us</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <button class="btn outline" onclick="openModal()">List a profile</button>
+</header>
+
+<main>
+<section class="section">
+  <div class="section-head"><div><span class="eyebrow">GET IN TOUCH</span><h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.6rem);margin:8px 0">Contact Serene Spa</h1><p style="color:#716a65;max-width:560px;margin:0">Have a question about a profile, availability or booking in Bengaluru? Reach out directly — we usually reply within the hour.</p></div></div>
+
+  <div class="benefits">
+    <div class="benefit"><div class="icon">💬</div><div><h3>WhatsApp</h3><p>The fastest way to reach us. Message us directly to check availability.</p><a class="btn green" style="display:inline-block;margin-top:10px" target="_blank" rel="noopener" href="https://wa.me/919845700129?text=Hi%2C%20I%27d%20like%20to%20get%20in%20touch%20with%20Serene%20Spa.">Message on WhatsApp</a></div></div>
+    <div class="benefit"><div class="icon">📞</div><div><h3>Call</h3><p>Prefer to talk? Give us a call directly.</p><a class="btn green alt" style="display:inline-block;margin-top:10px" href="tel:+919845700129">+91 98457 00129</a></div></div>
+    <div class="benefit"><div class="icon">✉️</div><div><h3>Email</h3><p>For detailed enquiries or profile submissions.</p><a class="btn green mail" style="display:inline-block;margin-top:10px" href="mailto:elitecompanionsgbl@gmail.com">elitecompanionsgbl@gmail.com</a></div></div>
+    <div class="benefit"><div class="icon">📍</div><div><h3>Location</h3><p>Serene Spa · Near KFC Signal, Indiranagar<br>Bengaluru, Karnataka - 560038</p></div></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div><span class="eyebrow">GET STARTED</span><h2>Want to create a profile?</h2><p>Submit your details for review. Profiles are published only after moderation.</p></div>
+  <div class="cta-btns">
+    <a class="btn light" href="mailto:elitecompanionsgbl@gmail.com">✉️ Email us</a>
+    <button class="btn light" onclick="openModal()">Request listing</button>
+  </div>
+</section>
+</main>
+
+<footer>
+<div class="logo">Serenespa Elitecompanion</div>
+  <p>© 2026 Serenespa Elitecompanion. Adults 18+ only.<br><strong>Serene Spa</strong> · Near KFC Signal, Indiranagar, Bengaluru - 560038<br><a href="tel:+919845700129">+91 98457 00129</a> · <a href="mailto:elitecompanionsgbl@gmail.com">elitecompanionsgbl@gmail.com</a></p>
+  <div><a href="about.html">About</a><a href="contact.html">Contact</a><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Community Standards</a></div>
+</footer>
+
+<div id="modal" class="modal">
+ <div class="modal-card">
+   <button class="close" onclick="closeModal()">×</button>
+   <span class="eyebrow">PROFILE REQUEST</span><h2>Submit a profile</h2>
+   <form id="profileForm" onsubmit="submitForm(event)">
+    <input id="fName" name="name" required placeholder="Display name">
+    <input id="fEmail" name="email" required type="email" placeholder="Email address">
+<select id="fCity" name="city" required><option value="">Choose city</option><option>Bengaluru</option><option>Mumbai</option><option>Chennai</option><option>Kolkata</option><option>Hyderabad</option><option>Pune</option></select>
+    <textarea id="fDesc" name="description" required placeholder="Short profile description"></textarea>
+    <label class="check"><input type="checkbox" required> I confirm I am 18+ and agree to the community standards.</label>
+    <button class="btn primary">Send for review</button>
+   </form>
+ </div>
+</div>
+<script src="script.js"></script>
+</body></html>
