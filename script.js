@@ -23,11 +23,6 @@ function deriveServiceKeywords(about){
 // City -> areas map for SEO-driven area selection
 const AREAS={
   'Bangalore':['Indiranagar','Koramangala','Whitefield','HSR Layout','Jayanagar','Malleshwaram','MG Road','Brigade Road','Electronic City','Marathahalli',''],
-  'Mumbai':['Bandra','Andheri','Juhu','Colaba','Worli','Powai','Lower Parel','Malad','Dadar','Goregaon'],
-  'Chennai':['T. Nagar','Adyar','Anna Nagar','Velachery','Mylapore','Besant Nagar','OMR','Guindy','Nungambakkam','Thiruvanmiyur'],
-  'Kolkata':['Park Street','Salt Lake','Kankurgachi','Ballygunge','New Town','Gariahat','Howrah','Behala','Dumdum','Rajarhat'],
-  'Hyderabad':['Banjara Hills','Jubilee Hills','Gachibowli','HITEC City','Madhapur','Kukatpally','Secunderabad','Ameerpet','Begumpet','Kondapur'],
-  'Pune':['Koregaon Park','Kothrud','Viman Nagar','Hinjewadi','Baner','Aundh','Hadapsar','Kalyani Nagar','Camp','Shivajinagar']
 };
 
 const profiles=[
@@ -64,7 +59,7 @@ function renderProfiles(list=profiles){
  const area=document.getElementById('areaFilter')?document.getElementById('areaFilter').value:'';
  let filtered=list.filter(p=>!city||p.city===city);
  if(area)filtered=filtered.filter(p=>(p.area||'').toLowerCase()===area.toLowerCase());
- box.innerHTML=filtered.map(p=>`<article class="profile"><a class="avatar-link" href="profile.html?name=${encodeURIComponent(p.name)}" title="View profile & photos"><div class="avatar"><img src="${p.img}" alt="${p.title}" onerror="this.onerror=null;this.src='img/profiles/placeholder.svg'"><span class="page-count">${p.pages} photos</span></div></a><div class="profile-info"><div class="name-row"><h3><a href="profile.html?name=${encodeURIComponent(p.name)}">${p.name}</a></h3>${p.verified?'<span class="verified">✓ Verified</span>':''}</div><div class="muted">${p.city}${p.area?' · '+p.area:''} · ${p.age} yrs</div><p class="about">${p.about}</p><div class="tags">${p.likes.map(l=>`<span>${l}</span>`).join('')}</div><div class="actions"><a class="btn green" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}">💬 WhatsApp</a><a class="btn green alt" target="_blank" rel="noopener" href="tel:+${PHONE}">📞 Call</a><a class="btn green mail" href="mailto:${EMAIL}?subject=${encodeURIComponent('Inquiry for '+p.name)}&body=${encodeURIComponent('Hi, I found '+p.name+' on Elite Companions.')}">✉️ Email</a></div></div></article>`).join('');
+ box.innerHTML=filtered.map(p=>`<article class="profile"><a class="avatar-link" href="profile.html?name=${encodeURIComponent(p.name)}" title="View profile and photos"><div class="avatar"><img src="${p.img}" alt="${p.title}" onerror="this.onerror=null;this.src='img/profiles/placeholder.svg'"><span class="page-count">${p.pages} photos</span></div></a><div class="profile-info"><div class="name-row"><h3><a href="profile.html?name=${encodeURIComponent(p.name)}">${p.name}</a></h3>${p.verified?'<span class="verified">✓ Verified</span>':''}</div><div class="muted">${p.city}${p.area?' · '+p.area:''} · ${p.age} yrs</div><p class="about">${p.about}</p><div class="tags">${p.likes.map(l=>`<span>${l}</span>`).join('')}</div><div class="actions"><a class="btn green" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}">💬 WhatsApp</a><a class="btn green alt" target="_blank" rel="noopener" href="tel:+${PHONE}">📞 Call</a><a class="btn green mail" href="mailto:${EMAIL}?subject=${encodeURIComponent('Inquiry for '+p.name)}&body=${encodeURIComponent('Hi, I found '+p.name+' on Elite Companions.')}">✉️ Email</a></div></div></article>`).join('');
 }
 function searchProfiles(){
  const q=document.getElementById('searchInput').value.toLowerCase().trim();

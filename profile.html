@@ -13,7 +13,8 @@
 <body>
 <header class="header">
 <a class="logo" href="index.html"><span class="logo-main">Serene Spa</span><span class="logo-tag">ELITE COMPANIONS</span></a>
-  <nav><a href="index.html#discover">Discover</a><a href="index.html#explore">Explore by City</a><a href="locations/">Locations</a><a href="index.html#safety">Safety</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <nav><a href="index.html">Home</a><a href="index.html#discover">Profiles</a><a href="locations/">Locations</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <nav class="mobile-quick-nav"><a href="index.html">Home</a><a href="index.html#discover">Profiles</a><a href="locations/">Locations</a></nav>
   <button class="btn outline" onclick="openModal()">List a profile</button>
 </header>
 
@@ -39,7 +40,7 @@
    <form id="profileForm" onsubmit="submitForm(event)">
     <input id="fName" name="name" required placeholder="Display name">
     <input id="fEmail" name="email" required type="email" placeholder="Email address">
-<select id="fCity" name="city" required><option value="">Choose city</option><option>Bangalore</option><option>Mumbai</option><option>Chennai</option><option>Kolkata</option><option>Hyderabad</option><option>Pune</option></select>
+<select id="fCity" name="city" required><option value="">Choose city</option><option>Bangalore</option></select>
     <textarea id="fDesc" name="description" required placeholder="Short profile description"></textarea>
     <label class="check"><input type="checkbox" required> I confirm I am 18+ and agree to the community standards.</label>
     <button class="btn primary">Send for review</button>
